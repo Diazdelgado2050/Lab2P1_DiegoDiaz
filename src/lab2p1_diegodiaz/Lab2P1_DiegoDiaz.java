@@ -19,7 +19,9 @@ public class Lab2P1_DiegoDiaz {
         // TODO code application logic here
         Scanner leer = new Scanner(System.in);
         
-        int opcion;
+        int opcion = 0;
+       
+        while (opcion != 4);
         do {
             System.out.println("===MENU===");
             System.out.println("1: ¿Es un numero Compuesto? ");
@@ -28,22 +30,35 @@ public class Lab2P1_DiegoDiaz {
             System.out.println("4:FIN ");
             System.out.println("Ingrese una de las opciones: ");
             opcion = leer.nextInt();
-                    
             
-        } while (opcion != 4);
-        
-        if (opcion < 1 || opcion > 4) {
-            System.out.println(" Error Ingrese una opcion del 1-4");
-         
-        }
-        if (opcion == 1) {
-            System.out.println("1: ¿Es un numero Compuesto?");
-            System.out.println("\n Ejercicio 1 - Determinar Numero Compuesto");
+            if (opcion == 1 ) {
+                
+                System.out.println("Ejercicio 1 - Determinar numero compuesto");
+                System.out.println("Ingrese un numero: ");
+                int numero = leer.nextInt();
+                
+                int divisor = 1;
+                int divisores = 0;
+                
+                while (divisor <= numero){
+                    if (numero % divisor == 0){
+                        divisores = divisores + 1;
+                    }
+                    divisor = divisor + 1;
+                }
+                if (divisores > 2) {
+                    System.out.println("El numero " + numero + "es un numero compuesto!!");
+                }else{ 
+                    System.out.println("El numero " + numero + " no es un numero compuesto");
+                }
+          
+                
+            }
+                
+            }
             
-                    
             
-        }
-     
+
     }
     
 }
