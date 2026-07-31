@@ -18,11 +18,10 @@ public class Lab2P1_DiegoDiaz {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner leer = new Scanner(System.in);
-        
+
         int opcion = 0;
-       
-        while (opcion != 4);
-        do {
+        while (opcion != 4){
+        
             System.out.println("===MENU===");
             System.out.println("1: ¿Es un numero Compuesto? ");
             System.out.println("2: Aproximacion de Euler");
@@ -31,34 +30,52 @@ public class Lab2P1_DiegoDiaz {
             System.out.println("Ingrese una de las opciones: ");
             opcion = leer.nextInt();
             
-            if (opcion == 1 ) {
+            if (opcion == 1) {
                 
-                System.out.println("Ejercicio 1 - Determinar numero compuesto");
-                System.out.println("Ingrese un numero: ");
+                System.out.println("\nEjercicio 1 - Determinar Numero Compuesto");
+                System.out.print("Ingrese un numero:\n");
                 int numero = leer.nextInt();
                 
+                
+                
                 int divisor = 1;
-                int divisores = 0;
-                
-                while (divisor <= numero){
-                    if (numero % divisor == 0){
-                        divisores = divisores + 1;
+                int divisores = 0; 
+
+                while (divisor <= numero) {
+                    if (numero % divisor == 0) {
+                        divisores = divisores + 1; 
                     }
-                    divisor = divisor + 1;
+                    divisor = divisor + 1; 
                 }
-                if (divisores > 2) {
-                    System.out.println("El numero " + numero + "es un numero compuesto!!");
-                }else{ 
-                    System.out.println("El numero " + numero + " no es un numero compuesto");
+
+                if (divisores > 2){
+               
+                    System.out.println("El numero " + numero + " es un numero compuesto!");
+                } else {
+                    System.out.println("El numero " + numero + " no es un numero compuesto!");
+                
                 }
-          
+            } else if (opcion == 2 ) {
+                System.out.println("Ejercicio 2 - Aproximacion de Euler");
+                System.out.println("Ingrese nivel de aproximacion");
+                int nivel = leer.nextInt();
                 
-            }
+                double euler = 1;
+                double factorial = 1;
+                int contador = 1;
                 
+                while (contador <= nivel) {
+                    factorial = factorial * contador;
+                    euler = euler + (1/factorial);
+                    contador = contador + 1;
+                    
+                }
+                System.out.println("La aproximacion de euler con un nivel de " + nivel + "es: " + euler);
+                 
+                       
             }
-            
             
 
+            }
+        }
     }
-    
-}
